@@ -1,0 +1,15 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: cscloud-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.3.11:8848
+
+logging:
+  level:
+    root: info
+    org.springframeWork: info

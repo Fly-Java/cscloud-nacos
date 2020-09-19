@@ -1,0 +1,15 @@
+server:
+  port: 8002
+
+spring:
+  application:
+    name: cscloud-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.3.11:8848
+
+logging:
+  level:
+    root: info
+    org.springframeWork: info
