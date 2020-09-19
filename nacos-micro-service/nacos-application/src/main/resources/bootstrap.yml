@@ -1,0 +1,22 @@
+server:
+  port: 8004
+
+spring:
+  application:
+    name: nacos-application
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.3.11:8848
+        namespace: 203f95ec-6871-4138-9199-5b079c6c1e3f
+        #cluster-name: DEFAULT 默认集群,可不填写
+      config:
+        server-addr: 192.168.3.11:8848 #配置中心地址
+        file-extension: yml
+        namespace: 203f95ec-6871-4138-9199-5b079c6c1e3f #命名空间dev_id
+        group: DEFAULT_GROUP
+        ext-config[0]:  #自定义扩展配置文件
+          data-id: ext-config-common.yml
+          group: DEFAULT_GROUP
