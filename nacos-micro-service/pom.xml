@@ -14,8 +14,7 @@
     <modules>
         <module>nacos-application</module>
         <module>nacos-gateway</module>
-        <module>nacos-service-first</module>
-        <module>nacos-service-second</module>
+        <module>nacos-service</module>
     </modules>
 
 

@@ -9,11 +9,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>nacos-service-first</artifactId>
+    <artifactId>nacos-service</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>nacos-service-first-api</module>
-        <module>nacos-service-first-server</module>
+        <module>nacos-service-first</module>
+        <module>nacos-common-api</module>
     </modules>
 
 
