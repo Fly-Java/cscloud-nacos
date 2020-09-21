@@ -6,6 +6,8 @@ spring:
     name: nacos-service-first
   cloud:
     nacos:
+      discovery:
+        server-addr: 192.168.3.11:8848 #配置中心地址
       config:
         server-addr: 192.168.3.11:8848 #配置中心地址
         file-extension: yml
