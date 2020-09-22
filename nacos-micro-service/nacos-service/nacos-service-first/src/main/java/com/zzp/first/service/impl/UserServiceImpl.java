@@ -3,6 +3,7 @@ package com.zzp.first.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zzp.common.entity.User;
+import com.zzp.common.utils.SnowflakeIdWorker;
 import com.zzp.first.mapper.UserMapper;
 import com.zzp.first.service.UserService;
 import lombok.extern.slf4j.Slf4j;

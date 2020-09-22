@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>nacos-service-first</module>
+        <module>nacos-service-second</module>
         <module>nacos-common-api</module>
     </modules>
 
