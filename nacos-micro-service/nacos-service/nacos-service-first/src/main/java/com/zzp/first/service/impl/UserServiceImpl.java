@@ -32,7 +32,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     public List<User> getUser() {
         List<User> userList = userMapper.selectList(new QueryWrapper<User>().lambda().eq(User::getName, "s"));
         log.info("userList:" + userList);
-        redisServiceUtil.set("jia3", "xin");
+        redisServiceUtil.setnx("sanguo8", "kaihua", 1000L);
         return userList;
     }
 
