@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zzp.second.mapper.BusOrderMapper" >
+  <resultMap id="BaseResultMap" type="com.zzp.common.entity.BusOrder" >
+    <id column="id" property="id" jdbcType="OTHER" />
+    <result column="order_money" property="orderMoney" jdbcType="OTHER" />
+    <result column="order_sn" property="orderSn" jdbcType="OTHER" />
+    <result column="receiver_address" property="receiverAddress" jdbcType="OTHER" />
+    <result column="receiver_name" property="receiverName" jdbcType="OTHER" />
+    <result column="receiver_phone" property="receiverPhone" jdbcType="OTHER" />
+    <result column="pay_status" property="payStatus" jdbcType="OTHER" />
+    <result column="order_time" property="orderTime" jdbcType="OTHER" />
+  </resultMap>
+
+</mapper>
