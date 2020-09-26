@@ -1,4 +1,4 @@
-package com.zzp.first;
+package com.zzp.second;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,10 +8,10 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
-public class FirstServiceApplication {
+public class SecondServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(FirstServiceApplication.class, args);
+        SpringApplication.run(SecondServiceApplication.class, args);
     }
 
 }

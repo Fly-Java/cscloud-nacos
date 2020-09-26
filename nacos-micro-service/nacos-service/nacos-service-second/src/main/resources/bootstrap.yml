@@ -1,0 +1,18 @@
+server:
+  port: 8005
+
+spring:
+  application:
+    name: nacos-service-second
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.3.11:8848 #配置中心地址
+      config:
+        server-addr: 192.168.3.11:8848 #配置中心地址
+        file-extension: yml
+        namespace: 8f23e062-8ca8-4714-b8b5-b54d57aacbcc #命名空间dev_id
+        group: DEFAULT_GROUP
+        shared-dataids: application.${spring.cloud.nacos.config.file-extension}
+#  profiles:
+#    active: @profiles.active@
