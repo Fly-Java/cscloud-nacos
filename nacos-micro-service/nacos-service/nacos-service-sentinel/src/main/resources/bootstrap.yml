@@ -1,9 +1,9 @@
 server:
-  port: 8004
+  port: 8006
 
 spring:
   application:
-    name: nacos-service-first
+    name: nacos-service-sentinel
   cloud:
     nacos:
       discovery:
@@ -18,5 +18,9 @@ spring:
       transport:
         dashboard: 192.168.3.11:8818
         port: 8719
-#  profiles:
-#    active: @profiles.active@
+
+#management:
+#  endpoint:
+#    web:
+#      exposure:
+#        include: '*'

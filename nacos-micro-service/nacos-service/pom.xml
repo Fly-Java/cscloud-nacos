@@ -15,6 +15,7 @@
         <module>nacos-service-first</module>
         <module>nacos-service-second</module>
         <module>nacos-common-api</module>
+        <module>nacos-service-sentinel</module>
     </modules>
 
 
