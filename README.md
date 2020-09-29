@@ -11,7 +11,7 @@ service mysql start/stop
 #关闭nacos
 ./shutdown.sh
 #查看有几个nacos启动
-#s -ef|grep nacos|grep -v grep | wc -l
+ps -ef|grep nacos|grep -v grep | wc -l
 #es启动 先切到es用户
 ./elasticsearch -d
 #查看端口号是否被占用

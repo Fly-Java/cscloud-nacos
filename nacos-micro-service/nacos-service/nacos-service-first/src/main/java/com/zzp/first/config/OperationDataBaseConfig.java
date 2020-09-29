@@ -2,7 +2,6 @@ package com.zzp.first.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.baomidou.mybatisplus.core.MybatisConfiguration;
-import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
 import lombok.Data;
 import org.apache.ibatis.logging.stdout.StdOutImpl;
@@ -17,16 +16,15 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
-import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.sql.SQLException;
 
 @Data
 @Configuration
-// 前缀为admin.datasource.druid的配置信息
-@ConfigurationProperties(prefix = "admin.datasource.druid")
-@MapperScan(basePackages = AdminDataBaseConfig.PACKAGE, sqlSessionFactoryRef = "adminSqlSessionFactory")
-public class AdminDataBaseConfig {
+// 前缀为operation.datasource.druid的配置信息
+@ConfigurationProperties(prefix = "operation.datasource.druid")
+@MapperScan(basePackages = OperationDataBaseConfig.PACKAGE, sqlSessionFactoryRef = "operationSqlSessionFactory")
+public class OperationDataBaseConfig {
 
 //    @Resource
 //    private PaginationInterceptor paginationInterceptor;
@@ -34,7 +32,7 @@ public class AdminDataBaseConfig {
     /**
      * dao层的包路径
      */
-    static final String PACKAGE = "com.zzp.first.mapper.admin";
+    static final String PACKAGE = "com.zzp.first.mapper.operation";
 
     /**
      * mapper文件的相对路径
@@ -59,8 +57,8 @@ public class AdminDataBaseConfig {
     private boolean poolPreparedStatements;
     private int maxPoolPreparedStatementPerConnectionSize;
 
-    @Bean(name = "adminDataSource")
-    public DataSource adminDataSource() throws SQLException {
+    @Bean(name = "operationDataSource")
+    public DataSource operationDataSource() throws SQLException {
         DruidDataSource druid = new DruidDataSource();
         // 监控统计拦截的filters
         druid.setFilters(filters);
@@ -98,17 +96,17 @@ public class AdminDataBaseConfig {
         return druid;
     }
 
-    @Bean(name = "adminTransactionManager")
-    public DataSourceTransactionManager adminTransactionManager() throws SQLException {
-        return new DataSourceTransactionManager(adminDataSource());
+    @Bean(name = "operationTransactionManager")
+    public DataSourceTransactionManager operationTransactionManager() throws SQLException {
+        return new DataSourceTransactionManager(operationDataSource());
     }
 
-    @Bean(name = "adminSqlSessionFactory")
-    public SqlSessionFactory adminSqlSessionFactory(@Qualifier("adminDataSource") DataSource adminDataSource) throws Exception {
+    @Bean(name = "operationSqlSessionFactory")
+    public SqlSessionFactory operationSqlSessionFactory(@Qualifier("operationDataSource") DataSource operationDataSource) throws Exception {
         MybatisSqlSessionFactoryBean sqlSessionFactory = new MybatisSqlSessionFactoryBean();
-        sqlSessionFactory.setDataSource(adminDataSource);
+        sqlSessionFactory.setDataSource(operationDataSource);
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        sqlSessionFactory.setMapperLocations(resolver.getResources(AdminDataBaseConfig.MAPPER_LOCATION));
+        sqlSessionFactory.setMapperLocations(resolver.getResources(OperationDataBaseConfig.MAPPER_LOCATION));
 //        sqlSessionFactory.setPlugins(paginationInterceptor);
 
         //配置sql打印

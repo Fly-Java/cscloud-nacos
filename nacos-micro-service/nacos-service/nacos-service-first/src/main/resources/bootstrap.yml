@@ -18,5 +18,9 @@ spring:
       transport:
         dashboard: 192.168.3.11:8818
         port: 8719
+
 #  profiles:
+feign:
+  sentinel:
+    enabled: true
 #    active: @profiles.active@

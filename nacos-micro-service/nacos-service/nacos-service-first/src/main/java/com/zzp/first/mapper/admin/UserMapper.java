@@ -1,4 +1,4 @@
-package com.zzp.first.mapper;
+package com.zzp.first.mapper.admin;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.zzp.common.entity.User;
